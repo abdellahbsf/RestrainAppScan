@@ -1,0 +1,214 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (appDetails) {
+      <div>
+        <h2 data-cy="appDetailsDetailsHeading"><span jhiTranslate="restrainAppScanApp.appDetails.detail.title">App Details</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ appDetails.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.appId">App Id</span></dt>
+          <dd>
+            <span>{{ appDetails.appId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.riskRating">Risk Rating</span></dt>
+          <dd>
+            <span>{{ appDetails.riskRating }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.criticalIssues">Critical Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.criticalIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.highIssues">High Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.highIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.mediumIssues">Medium Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.mediumIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.lowIssues">Low Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.lowIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.informationalIssues">Informational Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.informationalIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.issuesInProgress">Issues In Progress</span></dt>
+          <dd>
+            <span>{{ appDetails.issuesInProgress }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.maxSeverity">Max Severity</span></dt>
+          <dd>
+            <span>{{ appDetails.maxSeverity }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.correlationState">Correlation State</span></dt>
+          <dd>
+            <span>{{ appDetails.correlationState }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.rRMaxSeverity">R R Max Severity</span></dt>
+          <dd>
+            <span>{{ appDetails.rRMaxSeverity }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.assetGroupId">Asset Group Id</span></dt>
+          <dd>
+            <span>{{ appDetails.assetGroupId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.businessImpact">Business Impact</span></dt>
+          <dd>
+            <span>{{ appDetails.businessImpact }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.url">Url</span></dt>
+          <dd>
+            <span>{{ appDetails.url }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.description">Description</span></dt>
+          <dd>
+            <span>{{ appDetails.description }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.businessUnit">Business Unit</span></dt>
+          <dd>
+            <span>{{ appDetails.businessUnit }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.businessUnitId">Business Unit Id</span></dt>
+          <dd>
+            <span>{{ appDetails.businessUnitId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.types">Types</span></dt>
+          <dd>
+            <span>{{ appDetails.types }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.technology">Technology</span></dt>
+          <dd>
+            <span>{{ appDetails.technology }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.testingStatus">Testing Status</span></dt>
+          <dd>
+            <span>{{ appDetails.testingStatus }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.appHosts">App Hosts</span></dt>
+          <dd>
+            <span>{{ appDetails.appHosts }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.collateralDamagePotential">Collateral Damage Potential</span></dt>
+          <dd>
+            <span>{{ appDetails.collateralDamagePotential }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.targetDistribution">Target Distribution</span></dt>
+          <dd>
+            <span>{{ appDetails.targetDistribution }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.confidentialityRequirement">Confidentiality Requirement</span></dt>
+          <dd>
+            <span>{{ appDetails.confidentialityRequirement }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.integrityRequirement">Integrity Requirement</span></dt>
+          <dd>
+            <span>{{ appDetails.integrityRequirement }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.availabilityRequirement">Availability Requirement</span></dt>
+          <dd>
+            <span>{{ appDetails.availabilityRequirement }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.tester">Tester</span></dt>
+          <dd>
+            <span>{{ appDetails.tester }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.businessOwner">Business Owner</span></dt>
+          <dd>
+            <span>{{ appDetails.businessOwner }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.developmentContact">Development Contact</span></dt>
+          <dd>
+            <span>{{ appDetails.developmentContact }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.preferredOfferingType">Preferred Offering Type</span></dt>
+          <dd>
+            <span>{{ appDetails.preferredOfferingType }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.assetGroupName">Asset Group Name</span></dt>
+          <dd>
+            <span>{{ appDetails.assetGroupName }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.dateCreated">Date Created</span></dt>
+          <dd>
+            <span>{{ appDetails.dateCreated | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.lastUpdated">Last Updated</span></dt>
+          <dd>
+            <span>{{ appDetails.lastUpdated | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.lastComment">Last Comment</span></dt>
+          <dd>
+            <span>{{ appDetails.lastComment }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.createdBy">Created By</span></dt>
+          <dd>
+            <span>{{ appDetails.createdBy }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.newIssues">New Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.newIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.openIssues">Open Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.openIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.totalIssues">Total Issues</span></dt>
+          <dd>
+            <span>{{ appDetails.totalIssues }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.overallCompliance">Overall Compliance</span></dt>
+          <dd>
+            <span>{{ appDetails.overallCompliance }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.canBeDeleted">Can Be Deleted</span></dt>
+          <dd>
+            <span>{{ appDetails.canBeDeleted }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.lockedToSubscription">Locked To Subscription</span></dt>
+          <dd>
+            <span>{{ appDetails.lockedToSubscription }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.totalScans">Total Scans</span></dt>
+          <dd>
+            <span>{{ appDetails.totalScans }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.nScanExecutions">N Scan Executions</span></dt>
+          <dd>
+            <span>{{ appDetails.nScanExecutions }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.hasExceedingIssuesNumber">Has Exceeding Issues Number</span></dt>
+          <dd>
+            <span>{{ appDetails.hasExceedingIssuesNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.hasExceedingScansNumber">Has Exceeding Scans Number</span></dt>
+          <dd>
+            <span>{{ appDetails.hasExceedingScansNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appDetails.autoDeleteExceededScans">Auto Delete Exceeded Scans</span></dt>
+          <dd>
+            <span>{{ appDetails.autoDeleteExceededScans }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/app-details', appDetails.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

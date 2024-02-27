@@ -1,0 +1,108 @@
+{
+  "annotations": {
+    "changelogDate": "20240227141228"
+  },
+  "applications": ["RestrainAppScan"],
+  "entityTableName": "app_issue",
+  "fields": [
+    {
+      "fieldName": "appId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "programmingLanguage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "severities",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "statusIssue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "issueType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locationIssue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateCreated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastFound",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "callingMethod",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isNewInScope",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "libraryName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libraryVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scaTechnology",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fGStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "applicationId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fixGroupId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apiIssue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sourceIssue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contextIssue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "appscanVulnId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "callingLine",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "classIssue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cveIssue",
+      "fieldType": "String"
+    }
+  ],
+  "name": "AppIssue",
+  "relationships": [],
+  "searchEngine": "no"
+}

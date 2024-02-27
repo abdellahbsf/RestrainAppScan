@@ -1,0 +1,56 @@
+{
+  "annotations": {
+    "changelogDate": "20240227141229"
+  },
+  "applications": ["RestrainAppScan"],
+  "entityTableName": "app_scans",
+  "fields": [
+    {
+      "fieldName": "appId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameScan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "technology",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iastAgentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iastAgentStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "urlScan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "appName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "testOptimizationLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numberOfExecutions",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastModified",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "name": "AppScans",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,126 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (appIssue) {
+      <div>
+        <h2 data-cy="appIssueDetailsHeading"><span jhiTranslate="restrainAppScanApp.appIssue.detail.title">App Issue</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ appIssue.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.appId">App Id</span></dt>
+          <dd>
+            <span>{{ appIssue.appId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.programmingLanguage">Programming Language</span></dt>
+          <dd>
+            <span>{{ appIssue.programmingLanguage }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.severities">Severities</span></dt>
+          <dd>
+            <span>{{ appIssue.severities }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.statusIssue">Status Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.statusIssue }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.issueType">Issue Type</span></dt>
+          <dd>
+            <span>{{ appIssue.issueType }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.locationIssue">Location Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.locationIssue }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.dateCreated">Date Created</span></dt>
+          <dd>
+            <span>{{ appIssue.dateCreated | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.lastUpdated">Last Updated</span></dt>
+          <dd>
+            <span>{{ appIssue.lastUpdated | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.lastFound">Last Found</span></dt>
+          <dd>
+            <span>{{ appIssue.lastFound | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.callingMethod">Calling Method</span></dt>
+          <dd>
+            <span>{{ appIssue.callingMethod }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.isNewInScope">Is New In Scope</span></dt>
+          <dd>
+            <span>{{ appIssue.isNewInScope }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.libraryName">Library Name</span></dt>
+          <dd>
+            <span>{{ appIssue.libraryName }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.libraryVersion">Library Version</span></dt>
+          <dd>
+            <span>{{ appIssue.libraryVersion }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.scaTechnology">Sca Technology</span></dt>
+          <dd>
+            <span>{{ appIssue.scaTechnology }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.fGStatus">F G Status</span></dt>
+          <dd>
+            <span>{{ appIssue.fGStatus }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.applicationId">Application Id</span></dt>
+          <dd>
+            <span>{{ appIssue.applicationId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.fixGroupId">Fix Group Id</span></dt>
+          <dd>
+            <span>{{ appIssue.fixGroupId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.apiIssue">Api Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.apiIssue }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.sourceIssue">Source Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.sourceIssue }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.contextIssue">Context Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.contextIssue }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.appscanVulnId">Appscan Vuln Id</span></dt>
+          <dd>
+            <span>{{ appIssue.appscanVulnId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.callingLine">Calling Line</span></dt>
+          <dd>
+            <span>{{ appIssue.callingLine }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.classIssue">Class Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.classIssue }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appIssue.cveIssue">Cve Issue</span></dt>
+          <dd>
+            <span>{{ appIssue.cveIssue }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/app-issue', appIssue.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,316 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-app-issue-heading"
+        data-cy="AppIssueCreateUpdateHeading"
+        jhiTranslate="restrainAppScanApp.appIssue.home.createOrEditLabel"
+      >
+        Create or edit a App Issue
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.appId" for="field_appId">App Id</label>
+          <input type="text" class="form-control" name="appId" id="field_appId" data-cy="appId" formControlName="appId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.programmingLanguage" for="field_programmingLanguage"
+            >Programming Language</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="programmingLanguage"
+            id="field_programmingLanguage"
+            data-cy="programmingLanguage"
+            formControlName="programmingLanguage"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.severities" for="field_severities">Severities</label>
+          <input
+            type="text"
+            class="form-control"
+            name="severities"
+            id="field_severities"
+            data-cy="severities"
+            formControlName="severities"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.statusIssue" for="field_statusIssue">Status Issue</label>
+          <input
+            type="text"
+            class="form-control"
+            name="statusIssue"
+            id="field_statusIssue"
+            data-cy="statusIssue"
+            formControlName="statusIssue"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.issueType" for="field_issueType">Issue Type</label>
+          <input type="text" class="form-control" name="issueType" id="field_issueType" data-cy="issueType" formControlName="issueType" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.locationIssue" for="field_locationIssue"
+            >Location Issue</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="locationIssue"
+            id="field_locationIssue"
+            data-cy="locationIssue"
+            formControlName="locationIssue"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.dateCreated" for="field_dateCreated">Date Created</label>
+          <div class="d-flex">
+            <input
+              id="field_dateCreated"
+              data-cy="dateCreated"
+              type="datetime-local"
+              class="form-control"
+              name="dateCreated"
+              formControlName="dateCreated"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.lastUpdated" for="field_lastUpdated">Last Updated</label>
+          <div class="d-flex">
+            <input
+              id="field_lastUpdated"
+              data-cy="lastUpdated"
+              type="datetime-local"
+              class="form-control"
+              name="lastUpdated"
+              formControlName="lastUpdated"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.lastFound" for="field_lastFound">Last Found</label>
+          <div class="d-flex">
+            <input
+              id="field_lastFound"
+              data-cy="lastFound"
+              type="datetime-local"
+              class="form-control"
+              name="lastFound"
+              formControlName="lastFound"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.callingMethod" for="field_callingMethod"
+            >Calling Method</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="callingMethod"
+            id="field_callingMethod"
+            data-cy="callingMethod"
+            formControlName="callingMethod"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.isNewInScope" for="field_isNewInScope">Is New In Scope</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="isNewInScope"
+            id="field_isNewInScope"
+            data-cy="isNewInScope"
+            formControlName="isNewInScope"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.libraryName" for="field_libraryName">Library Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="libraryName"
+            id="field_libraryName"
+            data-cy="libraryName"
+            formControlName="libraryName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.libraryVersion" for="field_libraryVersion"
+            >Library Version</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="libraryVersion"
+            id="field_libraryVersion"
+            data-cy="libraryVersion"
+            formControlName="libraryVersion"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.scaTechnology" for="field_scaTechnology"
+            >Sca Technology</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="scaTechnology"
+            id="field_scaTechnology"
+            data-cy="scaTechnology"
+            formControlName="scaTechnology"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.fGStatus" for="field_fGStatus">F G Status</label>
+          <input type="text" class="form-control" name="fGStatus" id="field_fGStatus" data-cy="fGStatus" formControlName="fGStatus" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.applicationId" for="field_applicationId"
+            >Application Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="applicationId"
+            id="field_applicationId"
+            data-cy="applicationId"
+            formControlName="applicationId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.fixGroupId" for="field_fixGroupId">Fix Group Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="fixGroupId"
+            id="field_fixGroupId"
+            data-cy="fixGroupId"
+            formControlName="fixGroupId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.apiIssue" for="field_apiIssue">Api Issue</label>
+          <input type="text" class="form-control" name="apiIssue" id="field_apiIssue" data-cy="apiIssue" formControlName="apiIssue" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.sourceIssue" for="field_sourceIssue">Source Issue</label>
+          <input
+            type="text"
+            class="form-control"
+            name="sourceIssue"
+            id="field_sourceIssue"
+            data-cy="sourceIssue"
+            formControlName="sourceIssue"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.contextIssue" for="field_contextIssue">Context Issue</label>
+          <input
+            type="text"
+            class="form-control"
+            name="contextIssue"
+            id="field_contextIssue"
+            data-cy="contextIssue"
+            formControlName="contextIssue"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.appscanVulnId" for="field_appscanVulnId"
+            >Appscan Vuln Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="appscanVulnId"
+            id="field_appscanVulnId"
+            data-cy="appscanVulnId"
+            formControlName="appscanVulnId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.callingLine" for="field_callingLine">Calling Line</label>
+          <input
+            type="text"
+            class="form-control"
+            name="callingLine"
+            id="field_callingLine"
+            data-cy="callingLine"
+            formControlName="callingLine"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.classIssue" for="field_classIssue">Class Issue</label>
+          <input
+            type="text"
+            class="form-control"
+            name="classIssue"
+            id="field_classIssue"
+            data-cy="classIssue"
+            formControlName="classIssue"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appIssue.cveIssue" for="field_cveIssue">Cve Issue</label>
+          <input type="text" class="form-control" name="cveIssue" id="field_cveIssue" data-cy="cveIssue" formControlName="cveIssue" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

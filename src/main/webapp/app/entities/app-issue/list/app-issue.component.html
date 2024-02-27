@@ -1,0 +1,270 @@
+<div>
+  <h2 id="page-heading" data-cy="AppIssueHeading">
+    <span jhiTranslate="restrainAppScanApp.appIssue.home.title">App Issues</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="restrainAppScanApp.appIssue.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-app-issue"
+        [routerLink]="['/app-issue/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="restrainAppScanApp.appIssue.home.createLabel">Create a new App Issue</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (appIssues?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="restrainAppScanApp.appIssue.home.notFound">No App Issues found</span>
+    </div>
+  }
+
+  @if (appIssues && appIssues.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="appId">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.appId">App Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="programmingLanguage">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.programmingLanguage">Programming Language</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="severities">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.severities">Severities</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="statusIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.statusIssue">Status Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="issueType">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.issueType">Issue Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="locationIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.locationIssue">Location Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="dateCreated">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.dateCreated">Date Created</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="lastUpdated">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.lastUpdated">Last Updated</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="lastFound">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.lastFound">Last Found</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="callingMethod">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.callingMethod">Calling Method</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="isNewInScope">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.isNewInScope">Is New In Scope</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="libraryName">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.libraryName">Library Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="libraryVersion">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.libraryVersion">Library Version</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="scaTechnology">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.scaTechnology">Sca Technology</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="fGStatus">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.fGStatus">F G Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="applicationId">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.applicationId">Application Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="fixGroupId">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.fixGroupId">Fix Group Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="apiIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.apiIssue">Api Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="sourceIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.sourceIssue">Source Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="contextIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.contextIssue">Context Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="appscanVulnId">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.appscanVulnId">Appscan Vuln Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="callingLine">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.callingLine">Calling Line</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="classIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.classIssue">Class Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="cveIssue">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appIssue.cveIssue">Cve Issue</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (appIssue of appIssues; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/app-issue', appIssue.id, 'view']">{{ appIssue.id }}</a>
+              </td>
+              <td>{{ appIssue.appId }}</td>
+              <td>{{ appIssue.programmingLanguage }}</td>
+              <td>{{ appIssue.severities }}</td>
+              <td>{{ appIssue.statusIssue }}</td>
+              <td>{{ appIssue.issueType }}</td>
+              <td>{{ appIssue.locationIssue }}</td>
+              <td>{{ appIssue.dateCreated | formatMediumDatetime }}</td>
+              <td>{{ appIssue.lastUpdated | formatMediumDatetime }}</td>
+              <td>{{ appIssue.lastFound | formatMediumDatetime }}</td>
+              <td>{{ appIssue.callingMethod }}</td>
+              <td>{{ appIssue.isNewInScope }}</td>
+              <td>{{ appIssue.libraryName }}</td>
+              <td>{{ appIssue.libraryVersion }}</td>
+              <td>{{ appIssue.scaTechnology }}</td>
+              <td>{{ appIssue.fGStatus }}</td>
+              <td>{{ appIssue.applicationId }}</td>
+              <td>{{ appIssue.fixGroupId }}</td>
+              <td>{{ appIssue.apiIssue }}</td>
+              <td>{{ appIssue.sourceIssue }}</td>
+              <td>{{ appIssue.contextIssue }}</td>
+              <td>{{ appIssue.appscanVulnId }}</td>
+              <td>{{ appIssue.callingLine }}</td>
+              <td>{{ appIssue.classIssue }}</td>
+              <td>{{ appIssue.cveIssue }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/app-issue', appIssue.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/app-issue', appIssue.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(appIssue)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

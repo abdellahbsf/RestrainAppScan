@@ -1,0 +1,112 @@
+application {
+  config {
+    baseName RestrainAppScan
+    applicationType monolith
+    packageName com.ras.myapp
+    authenticationType jwt
+    prodDatabaseType postgresql
+    clientFramework angular
+  }
+  entities *
+}
+
+entity Client {
+keyId String
+keySecret String
+Token String
+}
+entity AllApps {
+appId String
+name String
+}
+
+entity AppDetails {
+appId String
+RiskRating String,
+    CriticalIssues Integer,
+    HighIssues Integer,
+    MediumIssues Integer,
+    LowIssues Integer,
+    InformationalIssues Integer,
+    IssuesInProgress Integer,
+    MaxSeverity String,
+    CorrelationState String,
+    RRMaxSeverity Integer,
+    AssetGroupId String,
+    BusinessImpact String,
+    Url String,
+    Description String,
+    BusinessUnit String,
+    BusinessUnitId String,
+    Types String,
+    Technology String,
+    TestingStatus String,
+    appHosts String,
+    CollateralDamagePotential String,
+    TargetDistribution String,
+    ConfidentialityRequirement String,
+    IntegrityRequirement String,
+    AvailabilityRequirement String,
+    Tester String,
+    BusinessOwner String,
+    DevelopmentContact String,
+    PreferredOfferingType String,
+    AssetGroupName String,
+    DateCreated ZonedDateTime,
+    LastUpdated ZonedDateTime,
+    LastComment String,
+    CreatedBy String,
+    NewIssues Integer,
+    OpenIssues Integer,
+    TotalIssues Integer,
+    OverallCompliance Boolean,
+    CanBeDeleted Boolean,
+    LockedToSubscription Boolean,
+    TotalScans Integer,
+    NScanExecutions Integer,
+    HasExceedingIssuesNumber Boolean,
+    HasExceedingScansNumber Boolean,
+    AutoDeleteExceededScans Boolean
+}
+
+entity AppIssue {
+    appId String,
+    ProgrammingLanguage String,
+    Severities String,
+    StatusIssue String,
+    IssueType String,
+    LocationIssue String,
+    DateCreated ZonedDateTime,
+    LastUpdated ZonedDateTime,
+    LastFound ZonedDateTime,
+    CallingMethod String,
+    IsNewInScope Boolean,
+    LibraryName String,
+    LibraryVersion String,
+    ScaTechnology String,
+    FGStatus String,
+    ApplicationId String,
+    FixGroupId String,
+    ApiIssue String,
+    SourceIssue String,
+    ContextIssue String,
+    AppscanVulnId String,
+    CallingLine String,
+    ClassIssue String,
+    CveIssue String
+}
+
+entity AppScans {
+    AppId String,
+    NameScan String,
+    Technology String,
+    IastAgentType String,
+    IastAgentStatus String,
+    UrlScan String,
+    AppName String,
+    TestOptimizationLevel String,
+    NumberOfExecutions Integer,
+    CreatedAt ZonedDateTime,
+    LastModified ZonedDateTime
+}
+

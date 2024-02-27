@@ -1,0 +1,34 @@
+{
+  "restrainAppScanApp": {
+    "appScans": {
+      "home": {
+        "title": "App Scans",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new App Scans",
+        "createOrEditLabel": "Create or edit a App Scans",
+        "notFound": "No App Scans found"
+      },
+      "created": "A new App Scans is created with identifier {{ param }}",
+      "updated": "A App Scans is updated with identifier {{ param }}",
+      "deleted": "A App Scans is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App Scans {{ id }}?"
+      },
+      "detail": {
+        "title": "App Scans"
+      },
+      "id": "ID",
+      "appId": "App Id",
+      "nameScan": "Name Scan",
+      "technology": "Technology",
+      "iastAgentType": "Iast Agent Type",
+      "iastAgentStatus": "Iast Agent Status",
+      "urlScan": "Url Scan",
+      "appName": "App Name",
+      "testOptimizationLevel": "Test Optimization Level",
+      "numberOfExecutions": "Number Of Executions",
+      "createdAt": "Created At",
+      "lastModified": "Last Modified"
+    }
+  }
+}

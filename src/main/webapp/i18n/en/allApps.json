@@ -1,0 +1,25 @@
+{
+  "restrainAppScanApp": {
+    "allApps": {
+      "home": {
+        "title": "All Apps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new All Apps",
+        "createOrEditLabel": "Create or edit a All Apps",
+        "notFound": "No All Apps found"
+      },
+      "created": "A new All Apps is created with identifier {{ param }}",
+      "updated": "A All Apps is updated with identifier {{ param }}",
+      "deleted": "A All Apps is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete All Apps {{ id }}?"
+      },
+      "detail": {
+        "title": "All Apps"
+      },
+      "id": "ID",
+      "appId": "App Id",
+      "name": "Name"
+    }
+  }
+}

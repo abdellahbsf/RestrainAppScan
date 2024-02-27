@@ -1,0 +1,166 @@
+<div>
+  <h2 id="page-heading" data-cy="AppScansHeading">
+    <span jhiTranslate="restrainAppScanApp.appScans.home.title">App Scans</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="restrainAppScanApp.appScans.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-app-scans"
+        [routerLink]="['/app-scans/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="restrainAppScanApp.appScans.home.createLabel">Create a new App Scans</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (appScans?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="restrainAppScanApp.appScans.home.notFound">No App Scans found</span>
+    </div>
+  }
+
+  @if (appScans && appScans.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="appId">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.appId">App Id</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameScan">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.nameScan">Name Scan</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="technology">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.technology">Technology</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="iastAgentType">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.iastAgentType">Iast Agent Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="iastAgentStatus">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.iastAgentStatus">Iast Agent Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="urlScan">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.urlScan">Url Scan</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="appName">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.appName">App Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="testOptimizationLevel">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.testOptimizationLevel">Test Optimization Level</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="numberOfExecutions">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.numberOfExecutions">Number Of Executions</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="createdAt">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.createdAt">Created At</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="lastModified">
+              <div class="d-flex">
+                <span jhiTranslate="restrainAppScanApp.appScans.lastModified">Last Modified</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (appScans of appScans; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/app-scans', appScans.id, 'view']">{{ appScans.id }}</a>
+              </td>
+              <td>{{ appScans.appId }}</td>
+              <td>{{ appScans.nameScan }}</td>
+              <td>{{ appScans.technology }}</td>
+              <td>{{ appScans.iastAgentType }}</td>
+              <td>{{ appScans.iastAgentStatus }}</td>
+              <td>{{ appScans.urlScan }}</td>
+              <td>{{ appScans.appName }}</td>
+              <td>{{ appScans.testOptimizationLevel }}</td>
+              <td>{{ appScans.numberOfExecutions }}</td>
+              <td>{{ appScans.createdAt | formatMediumDatetime }}</td>
+              <td>{{ appScans.lastModified | formatMediumDatetime }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/app-scans', appScans.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/app-scans', appScans.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(appScans)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

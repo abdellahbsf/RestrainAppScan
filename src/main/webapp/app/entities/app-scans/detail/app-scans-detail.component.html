@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (appScans) {
+      <div>
+        <h2 data-cy="appScansDetailsHeading"><span jhiTranslate="restrainAppScanApp.appScans.detail.title">App Scans</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ appScans.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.appId">App Id</span></dt>
+          <dd>
+            <span>{{ appScans.appId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.nameScan">Name Scan</span></dt>
+          <dd>
+            <span>{{ appScans.nameScan }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.technology">Technology</span></dt>
+          <dd>
+            <span>{{ appScans.technology }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.iastAgentType">Iast Agent Type</span></dt>
+          <dd>
+            <span>{{ appScans.iastAgentType }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.iastAgentStatus">Iast Agent Status</span></dt>
+          <dd>
+            <span>{{ appScans.iastAgentStatus }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.urlScan">Url Scan</span></dt>
+          <dd>
+            <span>{{ appScans.urlScan }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.appName">App Name</span></dt>
+          <dd>
+            <span>{{ appScans.appName }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.testOptimizationLevel">Test Optimization Level</span></dt>
+          <dd>
+            <span>{{ appScans.testOptimizationLevel }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.numberOfExecutions">Number Of Executions</span></dt>
+          <dd>
+            <span>{{ appScans.numberOfExecutions }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.createdAt">Created At</span></dt>
+          <dd>
+            <span>{{ appScans.createdAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.appScans.lastModified">Last Modified</span></dt>
+          <dd>
+            <span>{{ appScans.lastModified | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/app-scans', appScans.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

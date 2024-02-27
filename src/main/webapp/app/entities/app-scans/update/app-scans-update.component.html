@@ -1,0 +1,158 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-app-scans-heading"
+        data-cy="AppScansCreateUpdateHeading"
+        jhiTranslate="restrainAppScanApp.appScans.home.createOrEditLabel"
+      >
+        Create or edit a App Scans
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.appId" for="field_appId">App Id</label>
+          <input type="text" class="form-control" name="appId" id="field_appId" data-cy="appId" formControlName="appId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.nameScan" for="field_nameScan">Name Scan</label>
+          <input type="text" class="form-control" name="nameScan" id="field_nameScan" data-cy="nameScan" formControlName="nameScan" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.technology" for="field_technology">Technology</label>
+          <input
+            type="text"
+            class="form-control"
+            name="technology"
+            id="field_technology"
+            data-cy="technology"
+            formControlName="technology"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.iastAgentType" for="field_iastAgentType"
+            >Iast Agent Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="iastAgentType"
+            id="field_iastAgentType"
+            data-cy="iastAgentType"
+            formControlName="iastAgentType"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.iastAgentStatus" for="field_iastAgentStatus"
+            >Iast Agent Status</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="iastAgentStatus"
+            id="field_iastAgentStatus"
+            data-cy="iastAgentStatus"
+            formControlName="iastAgentStatus"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.urlScan" for="field_urlScan">Url Scan</label>
+          <input type="text" class="form-control" name="urlScan" id="field_urlScan" data-cy="urlScan" formControlName="urlScan" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.appName" for="field_appName">App Name</label>
+          <input type="text" class="form-control" name="appName" id="field_appName" data-cy="appName" formControlName="appName" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.testOptimizationLevel" for="field_testOptimizationLevel"
+            >Test Optimization Level</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="testOptimizationLevel"
+            id="field_testOptimizationLevel"
+            data-cy="testOptimizationLevel"
+            formControlName="testOptimizationLevel"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.numberOfExecutions" for="field_numberOfExecutions"
+            >Number Of Executions</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="numberOfExecutions"
+            id="field_numberOfExecutions"
+            data-cy="numberOfExecutions"
+            formControlName="numberOfExecutions"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.createdAt" for="field_createdAt">Created At</label>
+          <div class="d-flex">
+            <input
+              id="field_createdAt"
+              data-cy="createdAt"
+              type="datetime-local"
+              class="form-control"
+              name="createdAt"
+              formControlName="createdAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appScans.lastModified" for="field_lastModified">Last Modified</label>
+          <div class="d-flex">
+            <input
+              id="field_lastModified"
+              data-cy="lastModified"
+              type="datetime-local"
+              class="form-control"
+              name="lastModified"
+              formControlName="lastModified"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

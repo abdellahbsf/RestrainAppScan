@@ -1,0 +1,20 @@
+{
+  "annotations": {
+    "changelogDate": "20240227141226"
+  },
+  "applications": ["RestrainAppScan"],
+  "entityTableName": "all_apps",
+  "fields": [
+    {
+      "fieldName": "appId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "AllApps",
+  "relationships": [],
+  "searchEngine": "no"
+}

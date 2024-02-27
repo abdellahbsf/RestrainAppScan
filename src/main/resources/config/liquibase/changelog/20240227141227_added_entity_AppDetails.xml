@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity AppDetails.
+    -->
+    <changeSet id="20240227141227-1" author="jhipster">
+        <createTable tableName="app_details">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="app_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="risk_rating" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="critical_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="high_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="medium_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="low_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="informational_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="issues_in_progress" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="max_severity" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="correlation_state" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="r_r_max_severity" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="asset_group_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_impact" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_unit" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_unit_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="types" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="technology" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="testing_status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="app_hosts" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="collateral_damage_potential" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="target_distribution" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="confidentiality_requirement" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="integrity_requirement" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="availability_requirement" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tester" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="business_owner" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="development_contact" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="preferred_offering_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="asset_group_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_created" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_updated" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_comment" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="new_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="open_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_issues" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="overall_compliance" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="can_be_deleted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="locked_to_subscription" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_scans" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="n_scan_executions" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="has_exceeding_issues_number" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="has_exceeding_scans_number" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="auto_delete_exceeded_scans" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="app_details" columnName="date_created" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="app_details" columnName="last_updated" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240227141227-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/app_details.csv"
+                  separator=";"
+                  tableName="app_details"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="app_id" type="string"/>
+            <column name="risk_rating" type="string"/>
+            <column name="critical_issues" type="numeric"/>
+            <column name="high_issues" type="numeric"/>
+            <column name="medium_issues" type="numeric"/>
+            <column name="low_issues" type="numeric"/>
+            <column name="informational_issues" type="numeric"/>
+            <column name="issues_in_progress" type="numeric"/>
+            <column name="max_severity" type="string"/>
+            <column name="correlation_state" type="string"/>
+            <column name="r_r_max_severity" type="numeric"/>
+            <column name="asset_group_id" type="string"/>
+            <column name="business_impact" type="string"/>
+            <column name="url" type="string"/>
+            <column name="description" type="string"/>
+            <column name="business_unit" type="string"/>
+            <column name="business_unit_id" type="string"/>
+            <column name="types" type="string"/>
+            <column name="technology" type="string"/>
+            <column name="testing_status" type="string"/>
+            <column name="app_hosts" type="string"/>
+            <column name="collateral_damage_potential" type="string"/>
+            <column name="target_distribution" type="string"/>
+            <column name="confidentiality_requirement" type="string"/>
+            <column name="integrity_requirement" type="string"/>
+            <column name="availability_requirement" type="string"/>
+            <column name="tester" type="string"/>
+            <column name="business_owner" type="string"/>
+            <column name="development_contact" type="string"/>
+            <column name="preferred_offering_type" type="string"/>
+            <column name="asset_group_name" type="string"/>
+            <column name="date_created" type="date"/>
+            <column name="last_updated" type="date"/>
+            <column name="last_comment" type="string"/>
+            <column name="created_by" type="string"/>
+            <column name="new_issues" type="numeric"/>
+            <column name="open_issues" type="numeric"/>
+            <column name="total_issues" type="numeric"/>
+            <column name="overall_compliance" type="boolean"/>
+            <column name="can_be_deleted" type="boolean"/>
+            <column name="locked_to_subscription" type="boolean"/>
+            <column name="total_scans" type="numeric"/>
+            <column name="n_scan_executions" type="numeric"/>
+            <column name="has_exceeding_issues_number" type="boolean"/>
+            <column name="has_exceeding_scans_number" type="boolean"/>
+            <column name="auto_delete_exceeded_scans" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

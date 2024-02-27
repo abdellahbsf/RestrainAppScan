@@ -1,0 +1,196 @@
+{
+  "annotations": {
+    "changelogDate": "20240227141227"
+  },
+  "applications": ["RestrainAppScan"],
+  "entityTableName": "app_details",
+  "fields": [
+    {
+      "fieldName": "appId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "riskRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "criticalIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "highIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mediumIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "lowIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "informationalIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "issuesInProgress",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maxSeverity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "correlationState",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rRMaxSeverity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "assetGroupId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessImpact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessUnit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessUnitId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "types",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "technology",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "testingStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "appHosts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collateralDamagePotential",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "targetDistribution",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "confidentialityRequirement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "integrityRequirement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "availabilityRequirement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tester",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "businessOwner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "developmentContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preferredOfferingType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assetGroupName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateCreated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastUpdated",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "lastComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "newIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "openIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "totalIssues",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "overallCompliance",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "canBeDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lockedToSubscription",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "totalScans",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nScanExecutions",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hasExceedingIssuesNumber",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "hasExceedingScansNumber",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "autoDeleteExceededScans",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "AppDetails",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,69 @@
+{
+  "restrainAppScanApp": {
+    "appDetails": {
+      "home": {
+        "title": "App Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new App Details",
+        "createOrEditLabel": "Create or edit a App Details",
+        "notFound": "No App Details found"
+      },
+      "created": "A new App Details is created with identifier {{ param }}",
+      "updated": "A App Details is updated with identifier {{ param }}",
+      "deleted": "A App Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App Details {{ id }}?"
+      },
+      "detail": {
+        "title": "App Details"
+      },
+      "id": "ID",
+      "appId": "App Id",
+      "riskRating": "Risk Rating",
+      "criticalIssues": "Critical Issues",
+      "highIssues": "High Issues",
+      "mediumIssues": "Medium Issues",
+      "lowIssues": "Low Issues",
+      "informationalIssues": "Informational Issues",
+      "issuesInProgress": "Issues In Progress",
+      "maxSeverity": "Max Severity",
+      "correlationState": "Correlation State",
+      "rRMaxSeverity": "R R Max Severity",
+      "assetGroupId": "Asset Group Id",
+      "businessImpact": "Business Impact",
+      "url": "Url",
+      "description": "Description",
+      "businessUnit": "Business Unit",
+      "businessUnitId": "Business Unit Id",
+      "types": "Types",
+      "technology": "Technology",
+      "testingStatus": "Testing Status",
+      "appHosts": "App Hosts",
+      "collateralDamagePotential": "Collateral Damage Potential",
+      "targetDistribution": "Target Distribution",
+      "confidentialityRequirement": "Confidentiality Requirement",
+      "integrityRequirement": "Integrity Requirement",
+      "availabilityRequirement": "Availability Requirement",
+      "tester": "Tester",
+      "businessOwner": "Business Owner",
+      "developmentContact": "Development Contact",
+      "preferredOfferingType": "Preferred Offering Type",
+      "assetGroupName": "Asset Group Name",
+      "dateCreated": "Date Created",
+      "lastUpdated": "Last Updated",
+      "lastComment": "Last Comment",
+      "createdBy": "Created By",
+      "newIssues": "New Issues",
+      "openIssues": "Open Issues",
+      "totalIssues": "Total Issues",
+      "overallCompliance": "Overall Compliance",
+      "canBeDeleted": "Can Be Deleted",
+      "lockedToSubscription": "Locked To Subscription",
+      "totalScans": "Total Scans",
+      "nScanExecutions": "N Scan Executions",
+      "hasExceedingIssuesNumber": "Has Exceeding Issues Number",
+      "hasExceedingScansNumber": "Has Exceeding Scans Number",
+      "autoDeleteExceededScans": "Auto Delete Exceeded Scans"
+    }
+  }
+}

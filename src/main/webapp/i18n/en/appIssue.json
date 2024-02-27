@@ -1,0 +1,47 @@
+{
+  "restrainAppScanApp": {
+    "appIssue": {
+      "home": {
+        "title": "App Issues",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new App Issue",
+        "createOrEditLabel": "Create or edit a App Issue",
+        "notFound": "No App Issues found"
+      },
+      "created": "A new App Issue is created with identifier {{ param }}",
+      "updated": "A App Issue is updated with identifier {{ param }}",
+      "deleted": "A App Issue is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App Issue {{ id }}?"
+      },
+      "detail": {
+        "title": "App Issue"
+      },
+      "id": "ID",
+      "appId": "App Id",
+      "programmingLanguage": "Programming Language",
+      "severities": "Severities",
+      "statusIssue": "Status Issue",
+      "issueType": "Issue Type",
+      "locationIssue": "Location Issue",
+      "dateCreated": "Date Created",
+      "lastUpdated": "Last Updated",
+      "lastFound": "Last Found",
+      "callingMethod": "Calling Method",
+      "isNewInScope": "Is New In Scope",
+      "libraryName": "Library Name",
+      "libraryVersion": "Library Version",
+      "scaTechnology": "Sca Technology",
+      "fGStatus": "F G Status",
+      "applicationId": "Application Id",
+      "fixGroupId": "Fix Group Id",
+      "apiIssue": "Api Issue",
+      "sourceIssue": "Source Issue",
+      "contextIssue": "Context Issue",
+      "appscanVulnId": "Appscan Vuln Id",
+      "callingLine": "Calling Line",
+      "classIssue": "Class Issue",
+      "cveIssue": "Cve Issue"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (allApps) {
+      <div>
+        <h2 data-cy="allAppsDetailsHeading"><span jhiTranslate="restrainAppScanApp.allApps.detail.title">All Apps</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ allApps.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.allApps.appId">App Id</span></dt>
+          <dd>
+            <span>{{ allApps.appId }}</span>
+          </dd>
+          <dt><span jhiTranslate="restrainAppScanApp.allApps.name">Name</span></dt>
+          <dd>
+            <span>{{ allApps.name }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/all-apps', allApps.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

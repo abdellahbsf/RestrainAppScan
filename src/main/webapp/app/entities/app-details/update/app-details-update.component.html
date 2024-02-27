@@ -1,0 +1,601 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-app-details-heading"
+        data-cy="AppDetailsCreateUpdateHeading"
+        jhiTranslate="restrainAppScanApp.appDetails.home.createOrEditLabel"
+      >
+        Create or edit a App Details
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.appId" for="field_appId">App Id</label>
+          <input type="text" class="form-control" name="appId" id="field_appId" data-cy="appId" formControlName="appId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.riskRating" for="field_riskRating">Risk Rating</label>
+          <input
+            type="text"
+            class="form-control"
+            name="riskRating"
+            id="field_riskRating"
+            data-cy="riskRating"
+            formControlName="riskRating"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.criticalIssues" for="field_criticalIssues"
+            >Critical Issues</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="criticalIssues"
+            id="field_criticalIssues"
+            data-cy="criticalIssues"
+            formControlName="criticalIssues"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.highIssues" for="field_highIssues">High Issues</label>
+          <input
+            type="number"
+            class="form-control"
+            name="highIssues"
+            id="field_highIssues"
+            data-cy="highIssues"
+            formControlName="highIssues"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.mediumIssues" for="field_mediumIssues">Medium Issues</label>
+          <input
+            type="number"
+            class="form-control"
+            name="mediumIssues"
+            id="field_mediumIssues"
+            data-cy="mediumIssues"
+            formControlName="mediumIssues"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.lowIssues" for="field_lowIssues">Low Issues</label>
+          <input type="number" class="form-control" name="lowIssues" id="field_lowIssues" data-cy="lowIssues" formControlName="lowIssues" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.informationalIssues" for="field_informationalIssues"
+            >Informational Issues</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="informationalIssues"
+            id="field_informationalIssues"
+            data-cy="informationalIssues"
+            formControlName="informationalIssues"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.issuesInProgress" for="field_issuesInProgress"
+            >Issues In Progress</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="issuesInProgress"
+            id="field_issuesInProgress"
+            data-cy="issuesInProgress"
+            formControlName="issuesInProgress"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.maxSeverity" for="field_maxSeverity">Max Severity</label>
+          <input
+            type="text"
+            class="form-control"
+            name="maxSeverity"
+            id="field_maxSeverity"
+            data-cy="maxSeverity"
+            formControlName="maxSeverity"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.correlationState" for="field_correlationState"
+            >Correlation State</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="correlationState"
+            id="field_correlationState"
+            data-cy="correlationState"
+            formControlName="correlationState"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.rRMaxSeverity" for="field_rRMaxSeverity"
+            >R R Max Severity</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="rRMaxSeverity"
+            id="field_rRMaxSeverity"
+            data-cy="rRMaxSeverity"
+            formControlName="rRMaxSeverity"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.assetGroupId" for="field_assetGroupId"
+            >Asset Group Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="assetGroupId"
+            id="field_assetGroupId"
+            data-cy="assetGroupId"
+            formControlName="assetGroupId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.businessImpact" for="field_businessImpact"
+            >Business Impact</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="businessImpact"
+            id="field_businessImpact"
+            data-cy="businessImpact"
+            formControlName="businessImpact"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.url" for="field_url">Url</label>
+          <input type="text" class="form-control" name="url" id="field_url" data-cy="url" formControlName="url" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.businessUnit" for="field_businessUnit">Business Unit</label>
+          <input
+            type="text"
+            class="form-control"
+            name="businessUnit"
+            id="field_businessUnit"
+            data-cy="businessUnit"
+            formControlName="businessUnit"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.businessUnitId" for="field_businessUnitId"
+            >Business Unit Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="businessUnitId"
+            id="field_businessUnitId"
+            data-cy="businessUnitId"
+            formControlName="businessUnitId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.types" for="field_types">Types</label>
+          <input type="text" class="form-control" name="types" id="field_types" data-cy="types" formControlName="types" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.technology" for="field_technology">Technology</label>
+          <input
+            type="text"
+            class="form-control"
+            name="technology"
+            id="field_technology"
+            data-cy="technology"
+            formControlName="technology"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.testingStatus" for="field_testingStatus"
+            >Testing Status</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="testingStatus"
+            id="field_testingStatus"
+            data-cy="testingStatus"
+            formControlName="testingStatus"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.appHosts" for="field_appHosts">App Hosts</label>
+          <input type="text" class="form-control" name="appHosts" id="field_appHosts" data-cy="appHosts" formControlName="appHosts" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="restrainAppScanApp.appDetails.collateralDamagePotential"
+            for="field_collateralDamagePotential"
+            >Collateral Damage Potential</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="collateralDamagePotential"
+            id="field_collateralDamagePotential"
+            data-cy="collateralDamagePotential"
+            formControlName="collateralDamagePotential"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.targetDistribution" for="field_targetDistribution"
+            >Target Distribution</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="targetDistribution"
+            id="field_targetDistribution"
+            data-cy="targetDistribution"
+            formControlName="targetDistribution"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="restrainAppScanApp.appDetails.confidentialityRequirement"
+            for="field_confidentialityRequirement"
+            >Confidentiality Requirement</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="confidentialityRequirement"
+            id="field_confidentialityRequirement"
+            data-cy="confidentialityRequirement"
+            formControlName="confidentialityRequirement"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.integrityRequirement" for="field_integrityRequirement"
+            >Integrity Requirement</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="integrityRequirement"
+            id="field_integrityRequirement"
+            data-cy="integrityRequirement"
+            formControlName="integrityRequirement"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.availabilityRequirement" for="field_availabilityRequirement"
+            >Availability Requirement</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="availabilityRequirement"
+            id="field_availabilityRequirement"
+            data-cy="availabilityRequirement"
+            formControlName="availabilityRequirement"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.tester" for="field_tester">Tester</label>
+          <input type="text" class="form-control" name="tester" id="field_tester" data-cy="tester" formControlName="tester" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.businessOwner" for="field_businessOwner"
+            >Business Owner</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="businessOwner"
+            id="field_businessOwner"
+            data-cy="businessOwner"
+            formControlName="businessOwner"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.developmentContact" for="field_developmentContact"
+            >Development Contact</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="developmentContact"
+            id="field_developmentContact"
+            data-cy="developmentContact"
+            formControlName="developmentContact"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.preferredOfferingType" for="field_preferredOfferingType"
+            >Preferred Offering Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="preferredOfferingType"
+            id="field_preferredOfferingType"
+            data-cy="preferredOfferingType"
+            formControlName="preferredOfferingType"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.assetGroupName" for="field_assetGroupName"
+            >Asset Group Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="assetGroupName"
+            id="field_assetGroupName"
+            data-cy="assetGroupName"
+            formControlName="assetGroupName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.dateCreated" for="field_dateCreated">Date Created</label>
+          <div class="d-flex">
+            <input
+              id="field_dateCreated"
+              data-cy="dateCreated"
+              type="datetime-local"
+              class="form-control"
+              name="dateCreated"
+              formControlName="dateCreated"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.lastUpdated" for="field_lastUpdated">Last Updated</label>
+          <div class="d-flex">
+            <input
+              id="field_lastUpdated"
+              data-cy="lastUpdated"
+              type="datetime-local"
+              class="form-control"
+              name="lastUpdated"
+              formControlName="lastUpdated"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.lastComment" for="field_lastComment">Last Comment</label>
+          <input
+            type="text"
+            class="form-control"
+            name="lastComment"
+            id="field_lastComment"
+            data-cy="lastComment"
+            formControlName="lastComment"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.createdBy" for="field_createdBy">Created By</label>
+          <input type="text" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.newIssues" for="field_newIssues">New Issues</label>
+          <input type="number" class="form-control" name="newIssues" id="field_newIssues" data-cy="newIssues" formControlName="newIssues" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.openIssues" for="field_openIssues">Open Issues</label>
+          <input
+            type="number"
+            class="form-control"
+            name="openIssues"
+            id="field_openIssues"
+            data-cy="openIssues"
+            formControlName="openIssues"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.totalIssues" for="field_totalIssues">Total Issues</label>
+          <input
+            type="number"
+            class="form-control"
+            name="totalIssues"
+            id="field_totalIssues"
+            data-cy="totalIssues"
+            formControlName="totalIssues"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.overallCompliance" for="field_overallCompliance"
+            >Overall Compliance</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="overallCompliance"
+            id="field_overallCompliance"
+            data-cy="overallCompliance"
+            formControlName="overallCompliance"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.canBeDeleted" for="field_canBeDeleted"
+            >Can Be Deleted</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="canBeDeleted"
+            id="field_canBeDeleted"
+            data-cy="canBeDeleted"
+            formControlName="canBeDeleted"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.lockedToSubscription" for="field_lockedToSubscription"
+            >Locked To Subscription</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="lockedToSubscription"
+            id="field_lockedToSubscription"
+            data-cy="lockedToSubscription"
+            formControlName="lockedToSubscription"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.totalScans" for="field_totalScans">Total Scans</label>
+          <input
+            type="number"
+            class="form-control"
+            name="totalScans"
+            id="field_totalScans"
+            data-cy="totalScans"
+            formControlName="totalScans"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.nScanExecutions" for="field_nScanExecutions"
+            >N Scan Executions</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nScanExecutions"
+            id="field_nScanExecutions"
+            data-cy="nScanExecutions"
+            formControlName="nScanExecutions"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="restrainAppScanApp.appDetails.hasExceedingIssuesNumber"
+            for="field_hasExceedingIssuesNumber"
+            >Has Exceeding Issues Number</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="hasExceedingIssuesNumber"
+            id="field_hasExceedingIssuesNumber"
+            data-cy="hasExceedingIssuesNumber"
+            formControlName="hasExceedingIssuesNumber"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.hasExceedingScansNumber" for="field_hasExceedingScansNumber"
+            >Has Exceeding Scans Number</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="hasExceedingScansNumber"
+            id="field_hasExceedingScansNumber"
+            data-cy="hasExceedingScansNumber"
+            formControlName="hasExceedingScansNumber"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="restrainAppScanApp.appDetails.autoDeleteExceededScans" for="field_autoDeleteExceededScans"
+            >Auto Delete Exceeded Scans</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="autoDeleteExceededScans"
+            id="field_autoDeleteExceededScans"
+            data-cy="autoDeleteExceededScans"
+            formControlName="autoDeleteExceededScans"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
