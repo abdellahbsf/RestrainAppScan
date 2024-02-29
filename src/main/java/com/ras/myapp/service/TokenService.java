@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 public class TokenService {
 
     @Value("${API_KEY_ID}")
-    private String apiscanKeyId;
+    private String apiKeyId;
 
     @Value("${API_KEY_SECRET}")
-    private String apiscanKeySecret;
+    private String apiKeySecret;
 
-    private final String apiKeyId = "44b9bc24-7d42-b8f9-c9cd-4b0aa157592f";
+    //private final String apiKeyId = "44b9bc24-7d42-b8f9-c9cd-4b0aa157592f";
 
-    private final String apiKeySecret = "P+IpyjCdabBBmR12gyexVjdQkcbn+X87xWwnT94wHb5y";
+    //private final String apiKeySecret = "P+IpyjCdabBBmR12gyexVjdQkcbn+X87xWwnT94wHb5y";
     private final String apiUrl = "https://cloud.appscan.com/api/V2/Account/ApiKeyLogin";
 
     public String getBearerToken() {
