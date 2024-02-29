@@ -169,6 +169,7 @@
           Spring Boot configuration key.
     -->
     <changeSet id="20240227141227-1-data" author="jhipster" context="faker">
+        <!--
         <loadData
                   file="config/liquibase/fake-data/app_details.csv"
                   separator=";"
@@ -221,7 +222,8 @@
             <column name="has_exceeding_issues_number" type="boolean"/>
             <column name="has_exceeding_scans_number" type="boolean"/>
             <column name="auto_delete_exceeded_scans" type="boolean"/>
-            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+
         </loadData>
+        -->
     </changeSet>
 </databaseChangeLog>

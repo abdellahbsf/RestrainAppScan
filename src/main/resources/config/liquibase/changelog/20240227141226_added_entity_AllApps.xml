@@ -35,6 +35,7 @@
           Spring Boot configuration key.
     -->
     <changeSet id="20240227141226-1-data" author="jhipster" context="faker">
+        <!--
         <loadData
                   file="config/liquibase/fake-data/all_apps.csv"
                   separator=";"
@@ -43,7 +44,7 @@
             <column name="id" type="numeric"/>
             <column name="app_id" type="string"/>
             <column name="name" type="string"/>
-            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
+        -->
     </changeSet>
 </databaseChangeLog>
