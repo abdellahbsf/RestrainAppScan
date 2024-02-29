@@ -1,0 +1,599 @@
+<!-- Websites Section -->
+<p class="section-title">HCL AppScan Cloud</p>
+
+<!-- Application Scanned Section -->
+<p class="section-title">Applications</p>
+<div *ngIf="allApplications && allApplications.Items && allApplications.Items.length > 0; else noApplication">
+  <table class="application-table">
+    <thead>
+      <tr>
+        <th>AppId</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let app of allApplications.Items">
+        <tr>
+          <td>{{ app.Id }}</td>
+          <td>{{ app.Name }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<ng-template #noApplication>
+  <p>No Application found.</p>
+</ng-template>
+
+<!-- Application Details Section -->
+<p class="section-title">Application Details</p>
+<div *ngIf="applicationDetails; else noDetails">
+  <table class="Details-table">
+    <tbody>
+      <tr>
+        <th>Id</th>
+        <td>{{ applicationDetails.Id }}</td>
+      </tr>
+      <tr>
+        <th>RiskRating</th>
+        <td>{{ applicationDetails.RiskRating }}</td>
+      </tr>
+      <tr>
+        <th>Critical Issues</th>
+        <td>{{ applicationDetails.CriticalIssues }}</td>
+      </tr>
+      <tr>
+        <th>High Issues</th>
+        <td>{{ applicationDetails.HighIssues }}</td>
+      </tr>
+      <tr>
+        <th>Medium Issues</th>
+        <td>{{ applicationDetails.MediumIssues }}</td>
+      </tr>
+      <tr>
+        <th>Low Issues</th>
+        <td>{{ applicationDetails.LowIssues }}</td>
+      </tr>
+      <tr>
+        <th>Informational Issues</th>
+        <td>{{ applicationDetails.InformationalIssues }}</td>
+      </tr>
+      <tr>
+        <th>Issues In Progress</th>
+        <td>{{ applicationDetails.IssuesInProgress }}</td>
+      </tr>
+      <tr>
+        <th>Max Severity</th>
+        <td>{{ applicationDetails.MaxSeverity }}</td>
+      </tr>
+      <tr>
+        <th>Correlation State</th>
+        <td>{{ applicationDetails.CorrelationState }}</td>
+      </tr>
+      <tr>
+        <th>RR_MaxSeverity</th>
+        <td>{{ applicationDetails.RR_MaxSeverity }}</td>
+      </tr>
+      <tr>
+        <th>AssetGroupId</th>
+        <td>{{ applicationDetails.AssetGroupId }}</td>
+      </tr>
+      <tr>
+        <th>Business Impact</th>
+        <td>{{ applicationDetails.BusinessImpact }}</td>
+      </tr>
+      <tr>
+        <th>Url</th>
+        <td>{{ applicationDetails.Url }}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>{{ applicationDetails.Description }}</td>
+      </tr>
+      <tr>
+        <th>Business Unit</th>
+        <td>{{ applicationDetails.BusinessUnit }}</td>
+      </tr>
+      <tr>
+        <th>Business Unit Id</th>
+        <td>{{ applicationDetails.BusinessUnitId }}</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>{{ applicationDetails.Type }}</td>
+      </tr>
+      <tr>
+        <th>Technology</th>
+        <td>{{ applicationDetails.Technology }}</td>
+      </tr>
+      <tr>
+        <th>Testing Status</th>
+        <td>{{ applicationDetails.TestingStatus }}</td>
+      </tr>
+      <tr>
+        <th>Hosts</th>
+        <td>{{ applicationDetails.Hosts }}</td>
+      </tr>
+      <tr>
+        <th>Collateral Damage Potential</th>
+        <td>{{ applicationDetails.CollateralDamagePotential }}</td>
+      </tr>
+      <tr>
+        <th>Target Distribution</th>
+        <td>{{ applicationDetails.TargetDistribution }}</td>
+      </tr>
+      <tr>
+        <th>Confidentiality Requirement</th>
+        <td>{{ applicationDetails.ConfidentialityRequirement }}</td>
+      </tr>
+      <tr>
+        <th>Integrity Requirement</th>
+        <td>{{ applicationDetails.IntegrityRequirement }}</td>
+      </tr>
+      <tr>
+        <th>Availability Requirement</th>
+        <td>{{ applicationDetails.AvailabilityRequirement }}</td>
+      </tr>
+      <tr>
+        <th>Tester</th>
+        <td>{{ applicationDetails.Tester }}</td>
+      </tr>
+      <tr>
+        <th>Business Owner</th>
+        <td>{{ applicationDetails.BusinessOwner }}</td>
+      </tr>
+      <tr>
+        <th>Development Contact</th>
+        <td>{{ applicationDetails.DevelopmentContact }}</td>
+      </tr>
+      <tr>
+        <th>Preferred Offering Type</th>
+        <td>{{ applicationDetails.PreferredOfferingType }}</td>
+      </tr>
+      <tr>
+        <th>Asset Group Name</th>
+        <td>{{ applicationDetails.AssetGroupName }}</td>
+      </tr>
+      <tr>
+        <th>Date Created</th>
+        <td>{{ applicationDetails.DateCreated }}</td>
+      </tr>
+      <tr>
+        <th>Last Updated</th>
+        <td>{{ applicationDetails.LastUpdated }}</td>
+      </tr>
+      <tr>
+        <th>Last Comment</th>
+        <td>{{ applicationDetails.LastComment }}</td>
+      </tr>
+      <tr>
+        <th>Created By</th>
+        <td>{{ applicationDetails.CreatedBy }}</td>
+      </tr>
+      <tr>
+        <th>New Issues</th>
+        <td>{{ applicationDetails.NewIssues }}</td>
+      </tr>
+      <tr>
+        <th>Open Issues</th>
+        <td>{{ applicationDetails.OpenIssues }}</td>
+      </tr>
+      <tr>
+        <th>Total Issues</th>
+        <td>{{ applicationDetails.TotalIssues }}</td>
+      </tr>
+      <tr>
+        <th>Overall Compliance</th>
+        <td>{{ applicationDetails.OverallCompliance }}</td>
+      </tr>
+      <tr>
+        <th>Compliance Statuses</th>
+        <td>{{ applicationDetails.ComplianceStatuses }}</td>
+      </tr>
+      <tr>
+        <th>CanBeDeleted</th>
+        <td>{{ applicationDetails.CanBeDeleted }}</td>
+      </tr>
+      <tr>
+        <th>LockedToSubscription</th>
+        <td>{{ applicationDetails.LockedToSubscription }}</td>
+      </tr>
+      <tr>
+        <th>Total Scans</th>
+        <td>{{ applicationDetails.TotalScans }}</td>
+      </tr>
+      <tr>
+        <th>NScan Executions</th>
+        <td>{{ applicationDetails.NScanExecutions }}</td>
+      </tr>
+      <tr>
+        <th>Has Exceeding Issues Number</th>
+        <td>{{ applicationDetails.HasExceedingIssuesNumber }}</td>
+      </tr>
+      <tr>
+        <th>Has Exceeding Scans Number</th>
+        <td>{{ applicationDetails.HasExceedingScansNumber }}</td>
+      </tr>
+      <tr>
+        <th>Auto Delete Exceeded Scans</th>
+        <td>{{ applicationDetails.AutoDeleteExceededScans }}</td>
+      </tr>
+      <tr>
+        <th>Presences</th>
+        <td>{{ applicationDetails.Presences }}</td>
+      </tr>
+      <tr>
+        <th>Use Only App Presences</th>
+        <td>{{ applicationDetails.UseOnlyAppPresences }}</td>
+      </tr>
+      <tr>
+        <th>Added To Asset Group By</th>
+        <td>
+          <ng-container *ngIf="applicationDetails.AddedToAssetGroupBy">
+            <div>
+              <p>Id: {{ applicationDetails.AddedToAssetGroupBy.Id }}</p>
+              <p>FirstName: {{ applicationDetails.AddedToAssetGroupBy.FirstName }}</p>
+              <p>LastName: {{ applicationDetails.AddedToAssetGroupBy.LastName }}</p>
+              <p>UserName: {{ applicationDetails.AddedToAssetGroupBy.UserName }}</p>
+              <p>Email: {{ applicationDetails.AddedToAssetGroupBy.Email }}</p>
+            </div>
+          </ng-container>
+        </td>
+      </tr>
+      <tr>
+        <th>Added To Asset Group At</th>
+        <td>{{ applicationDetails.AddedToAssetGroupAt }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noDetails>
+  <p>No Application details found.</p>
+</ng-template>
+
+<!-- Application Scans Section -->
+<p class="section-title">Application Scans</p>
+<div *ngIf="applicationScans; else noScans">
+  <table class="scans-table">
+    <tbody>
+      <tr>
+        <th>AppId</th>
+        <td>{{ applicationScans.AppId }}</td>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <td>{{ applicationScans.Id }}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{ applicationScans.Name }}</td>
+      </tr>
+      <tr>
+        <th>Technology</th>
+        <td>{{ applicationScans.Technology }}</td>
+      </tr>
+      <tr>
+        <th>IastAgentType</th>
+        <td>{{ applicationScans.IastAgentType }}</td>
+      </tr>
+      <tr>
+        <th>IastAgentStatus</th>
+        <td>{{ applicationScans.IastAgentStatus }}</td>
+      </tr>
+      <tr>
+        <th>Url</th>
+        <td>{{ applicationScans.Url }}</td>
+      </tr>
+      <tr>
+        <th>AppName</th>
+        <td>{{ applicationScans.AppName }}</td>
+      </tr>
+      <tr>
+        <th>TestOptimizationLevel</th>
+        <td>{{ applicationScans.TestOptimizationLevel }}</td>
+      </tr>
+      <tr>
+        <th>NumberOfExecutions</th>
+        <td>{{ applicationScans.NumberOfExecutions }}</td>
+      </tr>
+      <tr>
+        <th>CreatedBy</th>
+        <td>
+          <ng-container *ngIf="applicationScans.CreatedBy">
+            <div>
+              <p>Id: {{ applicationScans.CreatedBy.Id }}</p>
+              <p>FirstName: {{ applicationScans.CreatedBy.FirstName }}</p>
+              <p>LastName: {{ applicationScans.CreatedBy.LastName }}</p>
+              <p>UserName: {{ applicationScans.CreatedBy.UserName }}</p>
+              <p>Email: {{ applicationScans.CreatedBy.Email }}</p>
+            </div>
+          </ng-container>
+        </td>
+      </tr>
+      <tr>
+        <th>CreatedAt</th>
+        <td>{{ applicationScans.CreatedAt }}</td>
+      </tr>
+      <tr>
+        <th>LastModified</th>
+        <td>{{ applicationScans.LastModified }}</td>
+      </tr>
+      <tr>
+        <th>NextScheduledRun</th>
+        <td>{{ applicationScans.NextScheduledRun }}</td>
+      </tr>
+      <tr>
+        <th>Latest Execution</th>
+        <td>
+          <ng-container *ngIf="applicationScans.LatestExecution">
+            <div class="execution-details">
+              <p><strong>Id:</strong> {{ applicationScans.LatestExecution.Id }}</p>
+              <p><strong>FileName:</strong> {{ applicationScans.LatestExecution.FileName }}</p>
+              <p><strong>UserMessage:</strong> {{ applicationScans.LatestExecution.UserMessage }}</p>
+              <p><strong>NNewAppIssues:</strong> {{ applicationScans.LatestExecution.NNewAppIssues }}</p>
+              <p><strong>NIssuesFound:</strong> {{ applicationScans.LatestExecution.NIssuesFound }}</p>
+              <p><strong>Status:</strong> {{ applicationScans.LatestExecution.Status }}</p>
+              <p><strong>Progress:</strong> {{ applicationScans.LatestExecution.Progress }}</p>
+              <p><strong>ExecutionProgress:</strong> {{ applicationScans.LatestExecution.ExecutionProgress }}</p>
+              <p><strong>CreatedBy:</strong></p>
+              <ng-container *ngIf="applicationScans.LatestExecution.CreatedBy">
+                <div class="created-by">
+                  <p><strong>Id:</strong> {{ applicationScans.LatestExecution.CreatedBy.Id }}</p>
+                  <p><strong>FirstName:</strong> {{ applicationScans.LatestExecution.CreatedBy.FirstName }}</p>
+                  <p><strong>LastName:</strong> {{ applicationScans.LatestExecution.CreatedBy.LastName }}</p>
+                  <p><strong>UserName:</strong> {{ applicationScans.LatestExecution.CreatedBy.UserName }}</p>
+                  <p><strong>Email:</strong> {{ applicationScans.LatestExecution.CreatedBy.Email }}</p>
+                </div>
+              </ng-container>
+              <p><strong>CreatedAt:</strong> {{ applicationScans.LatestExecution.CreatedAt }}</p>
+              <p><strong>ScanEndTime:</strong> {{ applicationScans.LatestExecution.ScanEndTime }}</p>
+              <p><strong>ExecutionDurationSec:</strong> {{ applicationScans.LatestExecution.ExecutionDurationSec }}</p>
+              <p><strong>NNewAppCriticalIssues:</strong> {{ applicationScans.LatestExecution.NNewAppCriticalIssues }}</p>
+              <p><strong>NCriticalIssues:</strong> {{ applicationScans.LatestExecution.NCriticalIssues }}</p>
+              <p><strong>NNewAppHighIssues:</strong> {{ applicationScans.LatestExecution.NNewAppHighIssues }}</p>
+              <p><strong>NHighIssues:</strong> {{ applicationScans.LatestExecution.NHighIssues }}</p>
+              <p><strong>NNewAppMediumIssues:</strong> {{ applicationScans.LatestExecution.NNewAppMediumIssues }}</p>
+              <p><strong>NMediumIssues:</strong> {{ applicationScans.LatestExecution.NMediumIssues }}</p>
+              <p><strong>NNewAppLowIssues:</strong> {{ applicationScans.LatestExecution.NNewAppLowIssues }}</p>
+              <p><strong>NLowIssues:</strong> {{ applicationScans.LatestExecution.NLowIssues }}</p>
+              <p><strong>NNewAppInfoIssues:</strong> {{ applicationScans.LatestExecution.NNewAppInfoIssues }}</p>
+              <p><strong>NInfoIssues:</strong> {{ applicationScans.LatestExecution.NInfoIssues }}</p>
+              <p><strong>NOpenSourceLicenses:</strong> {{ applicationScans.LatestExecution.NOpenSourceLicenses }}</p>
+              <p><strong>NOpenSourcePackages:</strong> {{ applicationScans.LatestExecution.NOpenSourcePackages }}</p>
+              <p><strong>HasLogs:</strong> {{ applicationScans.LatestExecution.HasLogs }}</p>
+              <p><strong>IsScanFileAvailable:</strong> {{ applicationScans.LatestExecution.IsScanFileAvailable }}</p>
+              <p><strong>PredefinedMessageKey:</strong> {{ applicationScans.LatestExecution.PredefinedMessageKey }}</p>
+              <p><strong>HandledByScanEnabler:</strong> {{ applicationScans.LatestExecution.HandledByScanEnabler }}</p>
+              <p><strong>IsPartial:</strong> {{ applicationScans.LatestExecution.IsPartial }}</p>
+              <p><strong>IncrementalBaseJobId:</strong> {{ applicationScans.LatestExecution.IncrementalBaseJobId }}</p>
+              <p><strong>IsIncrementalRetest:</strong> {{ applicationScans.LatestExecution.IsIncrementalRetest }}</p>
+              <!-- Add more rows for other properties in LatestExecution as needed -->
+            </div>
+          </ng-container>
+        </td>
+      </tr>
+
+      <!--
+    <tr>
+      <th>LatestExecution</th>
+      <td>
+        <ng-container *ngIf="applicationScans.LatestExecution">
+          <div>
+            <p>Id: {{ applicationScans.LatestExecution.Id }}</p>
+            <p>FileName: {{ applicationScans.LatestExecution.FileName }}</p>
+            <p>UserMessage: {{ applicationScans.LatestExecution.UserMessage }}</p>
+            <p>NNewAppIssues: {{ applicationScans.LatestExecution.NNewAppIssues }}</p>
+            <p>NIssuesFound: {{ applicationScans.LatestExecution.NIssuesFound }}</p>
+            <p>Status: {{ applicationScans.LatestExecution.Status }}</p>
+            <p>Progress: {{ applicationScans.LatestExecution.Progress }}</p>
+            <p>ExecutionProgress: {{ applicationScans.LatestExecution.ExecutionProgress }}</p>
+            <p>CreatedBy:
+              <ng-container *ngIf="applicationScans.LatestExecution.CreatedBy">
+                <div>
+                  <p>Id: {{ applicationScans.LatestExecution.CreatedBy.Id }}</p>
+                  <p>FirstName: {{ applicationScans.LatestExecution.CreatedBy.FirstName }}</p>
+                  <p>LastName: {{ applicationScans.LatestExecution.CreatedBy.LastName }}</p>
+                  <p>UserName: {{ applicationScans.LatestExecution.CreatedBy.UserName }}</p>
+                  <p>Email: {{ applicationScans.LatestExecution.CreatedBy.Email }}</p>
+                </div>
+              </ng-container>
+            </p>
+            <p>CreatedAt: {{ applicationScans.LatestExecution.CreatedAt }}</p>
+            <p>ScanEndTime: {{ applicationScans.LatestExecution.ScanEndTime }}</p>
+            <p>ExecutionDurationSec: {{ applicationScans.LatestExecution.ExecutionDurationSec }}</p>
+            <p>NNewAppCriticalIssues: {{ applicationScans.LatestExecution.NNewAppCriticalIssues }}</p>
+            <p>NCriticalIssues: {{ applicationScans.LatestExecution.NCriticalIssues }}</p>
+            <p>NNewAppHighIssues: {{ applicationScans.LatestExecution.NNewAppHighIssues }}</p>
+            <p>NHighIssues: {{ applicationScans.LatestExecution.NHighIssues }}</p>
+            <p>NNewAppMediumIssues: {{ applicationScans.LatestExecution.NNewAppMediumIssues }}</p>
+            <p>NMediumIssues: {{ applicationScans.LatestExecution.NMediumIssues }}</p>
+            <p>NNewAppLowIssues: {{ applicationScans.LatestExecution.NNewAppLowIssues }}</p>
+            <p>NLowIssues: {{ applicationScans.LatestExecution.NLowIssues }}</p>
+            <p>NNewAppInfoIssues: {{ applicationScans.LatestExecution.NNewAppInfoIssues }}</p>
+            <p>NInfoIssues: {{ applicationScans.LatestExecution.NInfoIssues }}</p>
+            <p>NOpenSourceLicenses: {{ applicationScans.LatestExecution.NOpenSourceLicenses }}</p>
+            <p>NOpenSourcePackages: {{ applicationScans.LatestExecution.NOpenSourcePackages }}</p>
+            <p>HasLogs: {{ applicationScans.LatestExecution.HasLogs }}</p>
+            <p>IsScanFileAvailable: {{ applicationScans.LatestExecution.IsScanFileAvailable }}</p>
+            <p>PredefinedMessageKey: {{ applicationScans.LatestExecution.PredefinedMessageKey }}</p>
+            <p>HandledByScanEnabler: {{ applicationScans.LatestExecution.HandledByScanEnabler }}</p>
+            <p>IsPartial: {{ applicationScans.LatestExecution.IsPartial }}</p>
+            <p>IncrementalBaseJobId: {{ applicationScans.LatestExecution.IncrementalBaseJobId }}</p>
+            <p>IsIncrementalRetest: {{ applicationScans.LatestExecution.IsIncrementalRetest }}</p>
+
+          </div>
+        </ng-container>
+      </td>
+    </tr>
+-->
+
+      <tr>
+        <th>Presence</th>
+        <td>{{ applicationScans.Presence }}</td>
+      </tr>
+      <tr>
+        <th>RecurrenceRule</th>
+        <td>{{ applicationScans.RecurrenceRule }}</td>
+      </tr>
+      <tr>
+        <th>IsPersonal</th>
+        <td>{{ applicationScans.IsPersonal }}</td>
+      </tr>
+      <tr>
+        <th>RescanAllowed</th>
+        <td>{{ applicationScans.RescanAllowed }}</td>
+      </tr>
+      <tr>
+        <th>ParsedFromUploadedFile</th>
+        <td>{{ applicationScans.ParsedFromUploadedFile }}</td>
+      </tr>
+      <tr>
+        <th>DeletedAllowed</th>
+        <td>{{ applicationScans.DeletedAllowed }}</td>
+      </tr>
+      <tr>
+        <th>RecurrenceEndDate</th>
+        <td>{{ applicationScans.RecurrenceEndDate }}</td>
+      </tr>
+      <tr>
+        <th>FullyAutomatic</th>
+        <td>{{ applicationScans.FullyAutomatic }}</td>
+      </tr>
+      <tr>
+        <th>EnableMailNotifications</th>
+        <td>{{ applicationScans.EnableMailNotifications }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noScans><p>No scans found.</p></ng-template>
+
+<!-- Application Issues Section -->
+<p class="section-title">Application Issues</p>
+<div *ngIf="applicationIssues">
+  <table class="issues-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Language</th>
+        <th>Severity</th>
+        <th>Status</th>
+        <th>IssueType</th>
+        <th>Location</th>
+        <th>DateCreated</th>
+        <th>LastUpdated</th>
+        <th>LastFound</th>
+        <th>CallingMethod</th>
+        <th>IsNewInScope</th>
+        <th>LibraryName</th>
+        <th>LibraryVersion</th>
+        <th>ScaTechnology</th>
+        <th>FGStatus</th>
+        <th>AsmHash</th>
+        <th>HashVersion</th>
+        <th>ApplicationId</th>
+        <th>FixGroupId</th>
+        <th>Api</th>
+        <th>Source</th>
+        <th>Context</th>
+        <th>AppscanVulnId</th>
+        <th>CallingLine</th>
+        <th>Class</th>
+        <th>Cve</th>
+        <th>CvePublishDate</th>
+        <th>DetailsUrl</th>
+        <th>Cvss</th>
+        <th>CvssVersion</th>
+        <th>DiscoveryMethod</th>
+        <th>Domain</th>
+        <th>Element</th>
+        <th>ElementType</th>
+        <th>ExternalId</th>
+        <th>Host</th>
+        <th>IssueTypeId</th>
+        <th>IssueTypeGuid</th>
+        <th>IssueXml</th>
+        <th>Line</th>
+        <th>Package</th>
+        <th>Path</th>
+        <th>Port</th>
+        <th>Scheme</th>
+        <th>SeverityValue</th>
+        <th>CorrelationGroupId</th>
+        <th>SourceFile</th>
+        <th>LastComment</th>
+        <th>Scanner</th>
+        <th>ScanName</th>
+        <th>Cwe</th>
+        <th>ThreatClassId</th>
+        <th>DiffResult</th>
+        <th>ApiVulnName</th>
+        <th>RemediationId</th>
+        <th>SourceFileUri</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="applicationIssues.Items && applicationIssues.Items.length > 0; else noIssues">
+        <tr *ngFor="let item of applicationIssues.Items">
+          <td>{{ item.Id }}</td>
+          <td>{{ item.Language }}</td>
+          <td>{{ item.Severity }}</td>
+          <td>{{ item.Status }}</td>
+          <td>{{ item.IssueType }}</td>
+          <td>{{ item.Location }}</td>
+          <td>{{ item.DateCreated }}</td>
+          <td>{{ item.LastUpdated }}</td>
+          <td>{{ item.LastFound }}</td>
+          <td>{{ item.CallingMethod }}</td>
+          <td>{{ item.IsNewInScope }}</td>
+          <td>{{ item.LibraryName }}</td>
+          <td>{{ item.LibraryVersion }}</td>
+          <td>{{ item.ScaTechnology }}</td>
+          <td>{{ item.FGStatus }}</td>
+          <td>{{ item.AsmHash }}</td>
+          <td>{{ item.HashVersion }}</td>
+          <td>{{ item.ApplicationId }}</td>
+          <td>{{ item.FixGroupId }}</td>
+          <td>{{ item.Api }}</td>
+          <td>{{ item.Source }}</td>
+          <td>{{ item.Context }}</td>
+          <td>{{ item.AppscanVulnId }}</td>
+          <td>{{ item.CallingLine }}</td>
+          <td>{{ item.Class }}</td>
+          <td>{{ item.Cve }}</td>
+          <td>{{ item.CvePublishDate }}</td>
+          <td>{{ item.DetailsUrl }}</td>
+          <td>{{ item.Cvss }}</td>
+          <td>{{ item.CvssVersion }}</td>
+          <td>{{ item.DiscoveryMethod }}</td>
+          <td>{{ item.Domain }}</td>
+          <td>{{ item.Element }}</td>
+          <td>{{ item.ElementType }}</td>
+          <td>{{ item.ExternalId }}</td>
+          <td>{{ item.Host }}</td>
+          <td>{{ item.IssueTypeId }}</td>
+          <td>{{ item.IssueTypeGuid }}</td>
+          <td>{{ item.IssueXml }}</td>
+          <td>{{ item.Line }}</td>
+          <td>{{ item.Package }}</td>
+          <td>{{ item.Path }}</td>
+          <td>{{ item.Port }}</td>
+          <td>{{ item.Scheme }}</td>
+          <td>{{ item.SeverityValue }}</td>
+          <td>{{ item.CorrelationGroupId }}</td>
+          <td>{{ item.SourceFile }}</td>
+          <td>{{ item.LastComment }}</td>
+          <td>{{ item.Scanner }}</td>
+          <td>{{ item.ScanName }}</td>
+          <td>{{ item.Cwe }}</td>
+          <td>{{ item.ThreatClassId }}</td>
+          <td>{{ item.DiffResult }}</td>
+          <td>{{ item.ApiVulnName }}</td>
+          <td>{{ item.RemediationId }}</td>
+          <td>{{ item.SourceFileUri }}</td>
+        </tr>
+      </ng-container>
+      <ng-template #noIssues><p>No issues found.</p></ng-template>
+    </tbody>
+  </table>
+</div>
