@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ClientRepository extends JpaRepository<Client, Long> {}
+public interface ClientRepository extends JpaRepository<Client, Long> {
+    Client findTopByOrderByIdDesc();
+}

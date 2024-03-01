@@ -1,25 +1,44 @@
 package com.ras.myapp.service;
 
+import com.ras.myapp.domain.Client;
+import com.ras.myapp.repository.ClientRepository;
+import jakarta.annotation.PostConstruct;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TokenService {
 
-    @Value("${API_KEY_ID}")
-    private String apiKeyId;
+    @Autowired
+    private ClientRepository clientRepository;
 
-    @Value("${API_KEY_SECRET}")
-    private String apiKeySecret;
+    //@Value("${API_KEY_ID}")
+    //private String apiKeyId;
+
+    //@Value("${API_KEY_SECRET}")
+    //private String apiKeySecret;
 
     //private final String apiKeyId = "44b9bc24-7d42-b8f9-c9cd-4b0aa157592f";
 
     //private final String apiKeySecret = "P+IpyjCdabBBmR12gyexVjdQkcbn+X87xWwnT94wHb5y";
+
+    private String apiKeyId = "";
+    private String apiKeySecret = "";
     private final String apiUrl = "https://cloud.appscan.com/api/V2/Account/ApiKeyLogin";
+
+    @PostConstruct
+    public void init() {
+        Client client = clientRepository.findTopByOrderByIdDesc();
+        if (client != null) {
+            this.apiKeyId = client.getKeyId();
+            this.apiKeySecret = client.getKeySecret();
+        }
+    }
 
     public String getBearerToken() {
         try {
