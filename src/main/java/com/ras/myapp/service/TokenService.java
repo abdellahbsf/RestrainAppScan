@@ -17,11 +17,11 @@ public class TokenService {
     @Autowired
     private ClientRepository clientRepository;
 
-    //@Value("${API_KEY_ID}")
-    //private String apiKeyId;
+    @Value("${API_KEY_ID}")
+    private String apiKeyId;
 
-    //@Value("${API_KEY_SECRET}")
-    //private String apiKeySecret;
+    @Value("${API_KEY_SECRET}")
+    private String apiKeySecret;
 
     //private final String apiKeyId = "44b9bc24-7d42-b8f9-c9cd-4b0aa157592f";
 
