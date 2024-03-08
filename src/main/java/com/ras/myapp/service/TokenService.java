@@ -17,18 +17,18 @@ public class TokenService {
     @Autowired
     private ClientRepository clientRepository;
 
-    @Value("${API_KEY_ID}")
-    private String apiKeyId;
+    //@Value("${API_KEY_ID}")
+    //private String apiKeyId;
 
-    @Value("${API_KEY_SECRET}")
-    private String apiKeySecret;
+    //@Value("${API_KEY_SECRET}")
+    //private String apiKeySecret;
 
-    //private final String apiKeyId = "44b9bc24-7d42-b8f9-c9cd-4b0aa157592f";
+    private final String apiKeyId = "44b9bc24-7d42-b8f9-c9cd-4b0aa157592f";
 
-    //private final String apiKeySecret = "P+IpyjCdabBBmR12gyexVjdQkcbn+X87xWwnT94wHb5y";
+    private final String apiKeySecret = "P+IpyjCdabBBmR12gyexVjdQkcbn+X87xWwnT94wHb5y";
 
-    private String apiKeyId = "";
-    private String apiKeySecret = "";
+    //private String apiKeyId = "";
+    //private String apiKeySecret = "";
     private final String apiUrl = "https://cloud.appscan.com/api/V2/Account/ApiKeyLogin";
 
     @PostConstruct
