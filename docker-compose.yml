@@ -4,5 +4,5 @@ services:
     ports:
       - '8080:8080'
     environment:
-      API_KEY_ID:
-      API_KEY_SECRET:
+      API_KEY_ID: '44b9bc24-7d42-b8f9-c9cd-4b0aa157592f'
+      API_KEY_SECRET: 'P+IpyjCdabBBmR12gyexVjdQkcbn+X87xWwnT94wHb5y'
